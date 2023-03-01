@@ -10,7 +10,7 @@
         <div class="col-12 py-3">
             <div class="d-flex justify-content-between align-items-center">
                 <h3>Info Comics</h3>
-                <a href="" class="btn btn-primary">Add New Comics</a>
+                <a href="{{ route('comics.create') }}" class="btn btn-primary">Add New Comics</a>
             </div>
             <div>
                 <table class="table">
