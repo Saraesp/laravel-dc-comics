@@ -37,15 +37,20 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:50',
+            'price' => 'nullable',
+            'series' => 'required|max:50',
+            'sale_date' => 'nullable',
+            'description' => 'nullable',
+            'thumb' => 'nullable'
+        ]);
+
         $form_data = $request->all();
 
         $newComic = new Comic();
-        $newComic->title = $form_data['title'];
-        $newComic->price = $form_data['price'];
-        $newComic->series = $form_data['series'];
-        $newComic->sale_date = $form_data['date'];
-        $newComic->description = $form_data['description'];
-        $newComic->thumb = $form_data['image'];
+        
+        $newComic->fill($form_data);
 
         $newComic->save();
 
@@ -79,8 +84,18 @@ class ComicsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::find($id);
+
+        if($comic){
+            $data = [
+                'comic' => $comic
+            ];
+
+            return view('comics.edit', $data);
+        } 
+        abort(404);
     }
+   
 
     /**
      * Update the specified resource in storage.

@@ -20,11 +20,11 @@
             </div>
             @endif
         </div>
-        <form action="{{ route('comics.store') }}" method="POST">
+        <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             <div class="form-group mb-3">
                 <label for="" class="control-label">Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Add Title">
+                <input type="text" name="title" class="form-control" placeholder="Add Title" value="{{ old('title') ?? $comic->title }}">
                 @error('titolo')
                     <div>{{ $message }}</div>
                 @enderror

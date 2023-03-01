@@ -42,10 +42,10 @@
                             <td>{{ $comic->description }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="{{ route('comics.show', ['comic' => $comic['id']]) }}" class="me-2 btn btn-info btn-sm btn-square" title="dettaglio comics">
+                                    <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="me-2 btn btn-info btn-sm btn-square" title="dettaglio comics">
                                         <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="" class="btn btn-warning btn-sm btn-square" title="dettaglio comics">
+                                    <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}" class="btn btn-warning btn-sm btn-square" title="dettaglio comics">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </div>
