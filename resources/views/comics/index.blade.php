@@ -10,7 +10,7 @@
         <div class="col-12 py-3">
             <div class="d-flex justify-content-between align-items-center">
                 <h3>Info Comics</h3>
-                <a href="" class="btn btn-primary">Aggiungi nuovo Comics</a>
+                <a href="" class="btn btn-primary">Add New Comics</a>
             </div>
             <div>
                 <table class="table">
@@ -36,7 +36,7 @@
                             <td>{{ $comic['description'] }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="" class="me-2 btn btn-info btn-sm btn-square" title="dettaglio comics">
+                                    <a href="{{ route('comics.show', ['comic' => $comic['id']]) }}" class="me-2 btn btn-info btn-sm btn-square" title="dettaglio comics">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                     <a href="" class="btn btn-warning btn-sm btn-square" title="dettaglio comics">
