@@ -27,13 +27,19 @@
                     <tbody>
                         @foreach($comics as $comic)
                         <tr>
-                            <td>{{ $comic['id'] }}</td>
-                            <td><img src="{{ $comic['thumb'] }}" class="img-fluid" alt=""></td>
-                            <td>{{ $comic['title'] }}</td>
-                            <td>{{ $comic['price'] }}</td>
-                            <td>{{ $comic['series'] }}</td>
-                            <td>{{ $comic['sale_date'] }}</td>
-                            <td>{{ $comic['description'] }}</td>
+                            <td>{{ $comic->id }}</td>
+                            <td>
+                                @if(!empty($comic->thumb))
+                                    <img src="{{ $comic->thumb }}" class="img-fluid" alt="">
+                                @else
+                                    Image not found
+                                @endif
+                            </td>
+                            <td>{{ $comic->title }}</td>
+                            <td>{{ $comic->price }}</td>
+                            <td>{{ $comic->series}}</td>
+                            <td>{{ $comic->sale_date }}</td>
+                            <td>{{ $comic->description }}</td>
                             <td>
                                 <div class="d-flex">
                                     <a href="{{ route('comics.show', ['comic' => $comic['id']]) }}" class="me-2 btn btn-info btn-sm btn-square" title="dettaglio comics">

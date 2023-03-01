@@ -17,7 +17,7 @@
             </div> 
             <div class="form-group mb-3">
                 <label for="" class="control-label">Price</label>
-                <span class="currencyinput">$<input type="text" name="currency"></span>
+                <span class="currencyinput">$<input type="text" name="price"></span>
             </div>
             <div class="form-group mb-3">
                 <label for="" class="control-label">Series</label>
@@ -25,12 +25,16 @@
             </div> 
             <div class="form-group mb-3">
                 <label for="" class="control-label">Sale date</label>
-                <input type="date" name="date" class="form-control">
+                <input type="date" name="sale_date" class="form-control">
             </div> 
             <div class="form-group mb-3">
                 <label for="" class="control-label">Description</label>
                 <textarea type="text" name="description" class="form-control" placeholder="Add Description" rows="8">
                 </textarea>
+            </div> 
+            <div class="form-group mb-3">
+                <label for="" class="control-label">Image</label>
+                <input type="text" name="thumb" class="form-control" placeholder="Add Image">
             </div> 
             <div class="form-group mb-3">
                 <button type="submit" class="btn btn-success">
